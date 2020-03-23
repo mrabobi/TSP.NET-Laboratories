@@ -1,0 +1,12 @@
+D:\WorkSpace\FacultateAn3Sem2\TSP.NET\CustomEvent\CustomEvent\obj\Debug\CustomEvent.csprojAssemblyReference.cache
+D:\WorkSpace\FacultateAn3Sem2\TSP.NET\CustomEvent\CustomEvent\bin\Debug\CustomEvent.exe.config
+D:\WorkSpace\FacultateAn3Sem2\TSP.NET\CustomEvent\CustomEvent\bin\Debug\CustomEvent.exe
+D:\WorkSpace\FacultateAn3Sem2\TSP.NET\CustomEvent\CustomEvent\bin\Debug\CustomEvent.pdb
+D:\WorkSpace\FacultateAn3Sem2\TSP.NET\CustomEvent\CustomEvent\obj\Debug\CustomEvent.exe
+D:\WorkSpace\FacultateAn3Sem2\TSP.NET\CustomEvent\CustomEvent\obj\Debug\CustomEvent.pdb
+D:\dev\TSP.NET\CustomEvent LAB1\CustomEvent\bin\Debug\CustomEvent.exe.config
+D:\dev\TSP.NET\CustomEvent LAB1\CustomEvent\bin\Debug\CustomEvent.exe
+D:\dev\TSP.NET\CustomEvent LAB1\CustomEvent\bin\Debug\CustomEvent.pdb
+D:\dev\TSP.NET\CustomEvent LAB1\CustomEvent\obj\Debug\CustomEvent.csprojAssemblyReference.cache
+D:\dev\TSP.NET\CustomEvent LAB1\CustomEvent\obj\Debug\CustomEvent.exe
+D:\dev\TSP.NET\CustomEvent LAB1\CustomEvent\obj\Debug\CustomEvent.pdb

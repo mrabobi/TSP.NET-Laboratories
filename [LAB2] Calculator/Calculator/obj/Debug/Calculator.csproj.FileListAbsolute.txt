@@ -1,0 +1,18 @@
+C:\Users\BOBIRE\source\repos\Calculator\Calculator\bin\Debug\Calculator.exe.config
+C:\Users\BOBIRE\source\repos\Calculator\Calculator\bin\Debug\Calculator.exe
+C:\Users\BOBIRE\source\repos\Calculator\Calculator\bin\Debug\Calculator.pdb
+C:\Users\BOBIRE\source\repos\Calculator\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
+C:\Users\BOBIRE\source\repos\Calculator\Calculator\obj\Debug\Calculator.Form1.resources
+C:\Users\BOBIRE\source\repos\Calculator\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+C:\Users\BOBIRE\source\repos\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
+C:\Users\BOBIRE\source\repos\Calculator\Calculator\obj\Debug\Calculator.exe
+C:\Users\BOBIRE\source\repos\Calculator\Calculator\obj\Debug\Calculator.pdb
+D:\dev\TSP.NET\Calculator LAB2\Calculator\bin\Debug\Calculator.exe.config
+D:\dev\TSP.NET\Calculator LAB2\Calculator\bin\Debug\Calculator.exe
+D:\dev\TSP.NET\Calculator LAB2\Calculator\bin\Debug\Calculator.pdb
+D:\dev\TSP.NET\Calculator LAB2\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
+D:\dev\TSP.NET\Calculator LAB2\Calculator\obj\Debug\Calculator.Form1.resources
+D:\dev\TSP.NET\Calculator LAB2\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+D:\dev\TSP.NET\Calculator LAB2\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
+D:\dev\TSP.NET\Calculator LAB2\Calculator\obj\Debug\Calculator.exe
+D:\dev\TSP.NET\Calculator LAB2\Calculator\obj\Debug\Calculator.pdb

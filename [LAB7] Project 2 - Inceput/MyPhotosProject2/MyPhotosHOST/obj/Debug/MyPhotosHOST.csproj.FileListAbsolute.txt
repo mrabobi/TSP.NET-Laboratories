@@ -1,0 +1,9 @@
+D:\dev\ProiecteTSPNET\MyPhotosProject2\MyPhotosHOST\bin\Debug\MyPhotosHOST.exe.config
+D:\dev\ProiecteTSPNET\MyPhotosProject2\MyPhotosHOST\bin\Debug\MyPhotosHOST.exe
+D:\dev\ProiecteTSPNET\MyPhotosProject2\MyPhotosHOST\bin\Debug\MyPhotosHOST.pdb
+D:\dev\ProiecteTSPNET\MyPhotosProject2\MyPhotosHOST\bin\Debug\MyPhotosProject2.dll
+D:\dev\ProiecteTSPNET\MyPhotosProject2\MyPhotosHOST\bin\Debug\MyPhotosProject2.pdb
+D:\dev\ProiecteTSPNET\MyPhotosProject2\MyPhotosHOST\obj\Debug\MyPhotosHOST.csprojAssemblyReference.cache
+D:\dev\ProiecteTSPNET\MyPhotosProject2\MyPhotosHOST\obj\Debug\MyPhotosHOST.csproj.CopyComplete
+D:\dev\ProiecteTSPNET\MyPhotosProject2\MyPhotosHOST\obj\Debug\MyPhotosHOST.exe
+D:\dev\ProiecteTSPNET\MyPhotosProject2\MyPhotosHOST\obj\Debug\MyPhotosHOST.pdb

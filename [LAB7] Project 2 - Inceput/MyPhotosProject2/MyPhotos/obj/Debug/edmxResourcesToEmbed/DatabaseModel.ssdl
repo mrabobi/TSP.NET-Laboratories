@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DatabaseModelStoreContainer">
+    <EntitySet Name="PicTableSet" EntityType="DatabaseModel.Store.PicTableSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PersonSet" EntityType="DatabaseModel.Store.PersonSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CategoriesSet" EntityType="DatabaseModel.Store.CategoriesSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PicTablePerson" EntityType="DatabaseModel.Store.PicTablePerson" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PicTableCategories" EntityType="DatabaseModel.Store.PicTableCategories" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_PicTablePerson_PicTable" Association="DatabaseModel.Store.FK_PicTablePerson_PicTable">
+      <End Role="PicTable" EntitySet="PicTableSet" />
+      <End Role="PicTablePerson" EntitySet="PicTablePerson" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PicTablePerson_Person" Association="DatabaseModel.Store.FK_PicTablePerson_Person">
+      <End Role="Person" EntitySet="PersonSet" />
+      <End Role="PicTablePerson" EntitySet="PicTablePerson" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PicTableCategories_PicTable" Association="DatabaseModel.Store.FK_PicTableCategories_PicTable">
+      <End Role="PicTable" EntitySet="PicTableSet" />
+      <End Role="PicTableCategories" EntitySet="PicTableCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PicTableCategories_Categories" Association="DatabaseModel.Store.FK_PicTableCategories_Categories">
+      <End Role="Categories" EntitySet="CategoriesSet" />
+      <End Role="PicTableCategories" EntitySet="PicTableCategories" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="PicTableSet">
+    <Key>
+      <PropertyRef Name="ID_IMG" />
+    </Key>
+    <Property Name="ID_IMG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_img" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Path" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Data_create" Type="datetime" Nullable="false" />
+    <Property Name="Location" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PersonSet">
+    <Key>
+      <PropertyRef Name="ID_Person" />
+    </Key>
+    <Property Name="ID_Person" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CategoriesSet">
+    <Key>
+      <PropertyRef Name="ID_Category" />
+    </Key>
+    <Property Name="ID_Category" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PicTablePerson">
+    <Key>
+      <PropertyRef Name="PicTable_ID_IMG" />
+      <PropertyRef Name="Person_ID_Person" />
+    </Key>
+    <Property Name="PicTable_ID_IMG" Type="int" Nullable="false" />
+    <Property Name="Person_ID_Person" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PicTableCategories">
+    <Key>
+      <PropertyRef Name="PicTable_ID_IMG" />
+      <PropertyRef Name="Categories_ID_Category" />
+    </Key>
+    <Property Name="PicTable_ID_IMG" Type="int" Nullable="false" />
+    <Property Name="Categories_ID_Category" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_PicTablePerson_PicTable">
+    <End Role="PicTable" Type="DatabaseModel.Store.PicTableSet" Multiplicity="1" />
+    <End Role="PicTablePerson" Type="DatabaseModel.Store.PicTablePerson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PicTable">
+        <PropertyRef Name="ID_IMG" />
+      </Principal>
+      <Dependent Role="PicTablePerson">
+        <PropertyRef Name="PicTable_ID_IMG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PicTablePerson_Person">
+    <End Role="PicTablePerson" Type="DatabaseModel.Store.PicTablePerson" Multiplicity="*" />
+    <End Role="Person" Type="DatabaseModel.Store.PersonSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="ID_Person" />
+      </Principal>
+      <Dependent Role="PicTablePerson">
+        <PropertyRef Name="Person_ID_Person" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PicTableCategories_PicTable">
+    <End Role="PicTable" Type="DatabaseModel.Store.PicTableSet" Multiplicity="1" />
+    <End Role="PicTableCategories" Type="DatabaseModel.Store.PicTableCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PicTable">
+        <PropertyRef Name="ID_IMG" />
+      </Principal>
+      <Dependent Role="PicTableCategories">
+        <PropertyRef Name="PicTable_ID_IMG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PicTableCategories_Categories">
+    <End Role="PicTableCategories" Type="DatabaseModel.Store.PicTableCategories" Multiplicity="*" />
+    <End Role="Categories" Type="DatabaseModel.Store.CategoriesSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="ID_Category" />
+      </Principal>
+      <Dependent Role="PicTableCategories">
+        <PropertyRef Name="Categories_ID_Category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

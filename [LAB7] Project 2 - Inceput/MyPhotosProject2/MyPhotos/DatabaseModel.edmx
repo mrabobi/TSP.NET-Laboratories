@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DatabaseModelStoreContainer">
+    <EntitySet Name="PicTableSet" EntityType="DatabaseModel.Store.PicTableSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PersonSet" EntityType="DatabaseModel.Store.PersonSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CategoriesSet" EntityType="DatabaseModel.Store.CategoriesSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PicTablePerson" EntityType="DatabaseModel.Store.PicTablePerson" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PicTableCategories" EntityType="DatabaseModel.Store.PicTableCategories" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_PicTablePerson_PicTable" Association="DatabaseModel.Store.FK_PicTablePerson_PicTable">
+      <End Role="PicTable" EntitySet="PicTableSet" />
+      <End Role="PicTablePerson" EntitySet="PicTablePerson" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PicTablePerson_Person" Association="DatabaseModel.Store.FK_PicTablePerson_Person">
+      <End Role="Person" EntitySet="PersonSet" />
+      <End Role="PicTablePerson" EntitySet="PicTablePerson" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PicTableCategories_PicTable" Association="DatabaseModel.Store.FK_PicTableCategories_PicTable">
+      <End Role="PicTable" EntitySet="PicTableSet" />
+      <End Role="PicTableCategories" EntitySet="PicTableCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PicTableCategories_Categories" Association="DatabaseModel.Store.FK_PicTableCategories_Categories">
+      <End Role="Categories" EntitySet="CategoriesSet" />
+      <End Role="PicTableCategories" EntitySet="PicTableCategories" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="PicTableSet">
+    <Key>
+      <PropertyRef Name="ID_IMG" />
+    </Key>
+    <Property Name="ID_IMG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_img" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Path" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Data_create" Type="datetime" Nullable="false" />
+    <Property Name="Location" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PersonSet">
+    <Key>
+      <PropertyRef Name="ID_Person" />
+    </Key>
+    <Property Name="ID_Person" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CategoriesSet">
+    <Key>
+      <PropertyRef Name="ID_Category" />
+    </Key>
+    <Property Name="ID_Category" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PicTablePerson">
+    <Key>
+      <PropertyRef Name="PicTable_ID_IMG" />
+      <PropertyRef Name="Person_ID_Person" />
+    </Key>
+    <Property Name="PicTable_ID_IMG" Type="int" Nullable="false" />
+    <Property Name="Person_ID_Person" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PicTableCategories">
+    <Key>
+      <PropertyRef Name="PicTable_ID_IMG" />
+      <PropertyRef Name="Categories_ID_Category" />
+    </Key>
+    <Property Name="PicTable_ID_IMG" Type="int" Nullable="false" />
+    <Property Name="Categories_ID_Category" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_PicTablePerson_PicTable">
+    <End Role="PicTable" Type="DatabaseModel.Store.PicTableSet" Multiplicity="1" />
+    <End Role="PicTablePerson" Type="DatabaseModel.Store.PicTablePerson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PicTable">
+        <PropertyRef Name="ID_IMG" />
+      </Principal>
+      <Dependent Role="PicTablePerson">
+        <PropertyRef Name="PicTable_ID_IMG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PicTablePerson_Person">
+    <End Role="PicTablePerson" Type="DatabaseModel.Store.PicTablePerson" Multiplicity="*" />
+    <End Role="Person" Type="DatabaseModel.Store.PersonSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="ID_Person" />
+      </Principal>
+      <Dependent Role="PicTablePerson">
+        <PropertyRef Name="Person_ID_Person" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PicTableCategories_PicTable">
+    <End Role="PicTable" Type="DatabaseModel.Store.PicTableSet" Multiplicity="1" />
+    <End Role="PicTableCategories" Type="DatabaseModel.Store.PicTableCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PicTable">
+        <PropertyRef Name="ID_IMG" />
+      </Principal>
+      <Dependent Role="PicTableCategories">
+        <PropertyRef Name="PicTable_ID_IMG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PicTableCategories_Categories">
+    <End Role="PicTableCategories" Type="DatabaseModel.Store.PicTableCategories" Multiplicity="*" />
+    <End Role="Categories" Type="DatabaseModel.Store.CategoriesSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="ID_Category" />
+      </Principal>
+      <Dependent Role="PicTableCategories">
+        <PropertyRef Name="Categories_ID_Category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DatabaseModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="DatabaseModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PicTableSet" EntityType="DatabaseModel.PicTable" />
+          <EntitySet Name="PersonSet" EntityType="DatabaseModel.Person" />
+          <AssociationSet Name="PicTablePerson" Association="DatabaseModel.PicTablePerson">
+            <End Role="PicTable" EntitySet="PicTableSet" />
+            <End Role="Person" EntitySet="PersonSet" />
+          </AssociationSet>
+          <EntitySet Name="CategoriesSet" EntityType="DatabaseModel.Categories" />
+          <AssociationSet Name="PicTableCategories" Association="DatabaseModel.PicTableCategories">
+            <End Role="PicTable" EntitySet="PicTableSet" />
+            <End Role="Categories" EntitySet="CategoriesSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="PicTable">
+          <Key>
+            <PropertyRef Name="ID_IMG" />
+          </Key>
+          <Property Name="ID_IMG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name_img" Type="String" Nullable="false" />
+          <Property Name="Path" Type="String" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" />
+          <Property Name="Data_create" Type="DateTime" Nullable="false" />
+          <Property Name="Location" Type="String" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="DatabaseModel.PicTablePerson" FromRole="PicTable" ToRole="Person" />
+          <NavigationProperty Name="Categories" Relationship="DatabaseModel.PicTableCategories" FromRole="PicTable" ToRole="Categories" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="ID_Person" />
+          </Key>
+          <Property Name="ID_Person" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" />
+          <NavigationProperty Name="PicTable" Relationship="DatabaseModel.PicTablePerson" FromRole="Person" ToRole="PicTable" />
+        </EntityType>
+        <Association Name="PicTablePerson">
+          <End Type="DatabaseModel.PicTable" Role="PicTable" Multiplicity="*" />
+          <End Type="DatabaseModel.Person" Role="Person" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="ID_Category" />
+          </Key>
+          <Property Name="ID_Category" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" Nullable="false" />
+          <NavigationProperty Name="PicTable" Relationship="DatabaseModel.PicTableCategories" FromRole="Categories" ToRole="PicTable" />
+        </EntityType>
+        <Association Name="PicTableCategories">
+          <End Type="DatabaseModel.PicTable" Role="PicTable" Multiplicity="*" />
+          <End Type="DatabaseModel.Categories" Role="Categories" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseModelContainer">
+    <EntitySetMapping Name="PicTableSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.PicTable)">
+        <MappingFragment StoreEntitySet="PicTableSet">
+          <ScalarProperty Name="ID_IMG" ColumnName="ID_IMG" />
+          <ScalarProperty Name="Name_img" ColumnName="Name_img" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Data_create" ColumnName="Data_create" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.Person)">
+        <MappingFragment StoreEntitySet="PersonSet">
+          <ScalarProperty Name="ID_Person" ColumnName="ID_Person" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoriesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.Categories)">
+        <MappingFragment StoreEntitySet="CategoriesSet">
+          <ScalarProperty Name="ID_Category" ColumnName="ID_Category" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="PicTablePerson" TypeName="DatabaseModel.PicTablePerson" StoreEntitySet="PicTablePerson">
+      <EndProperty Name="PicTable">
+        <ScalarProperty Name="ID_IMG" ColumnName="PicTable_ID_IMG" />
+      </EndProperty>
+      <EndProperty Name="Person">
+        <ScalarProperty Name="ID_Person" ColumnName="Person_ID_Person" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PicTableCategories" TypeName="DatabaseModel.PicTableCategories" StoreEntitySet="PicTableCategories">
+      <EndProperty Name="PicTable">
+        <ScalarProperty Name="ID_IMG" ColumnName="PicTable_ID_IMG" />
+      </EndProperty>
+      <EndProperty Name="Categories">
+        <ScalarProperty Name="ID_Category" ColumnName="Categories_ID_Category" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

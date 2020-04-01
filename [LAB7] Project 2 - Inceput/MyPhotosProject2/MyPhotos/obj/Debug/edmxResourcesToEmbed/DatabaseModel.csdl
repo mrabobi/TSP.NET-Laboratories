@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DatabaseModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="DatabaseModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PicTableSet" EntityType="DatabaseModel.PicTable" />
+    <EntitySet Name="PersonSet" EntityType="DatabaseModel.Person" />
+    <AssociationSet Name="PicTablePerson" Association="DatabaseModel.PicTablePerson">
+      <End Role="PicTable" EntitySet="PicTableSet" />
+      <End Role="Person" EntitySet="PersonSet" />
+    </AssociationSet>
+    <EntitySet Name="CategoriesSet" EntityType="DatabaseModel.Categories" />
+    <AssociationSet Name="PicTableCategories" Association="DatabaseModel.PicTableCategories">
+      <End Role="PicTable" EntitySet="PicTableSet" />
+      <End Role="Categories" EntitySet="CategoriesSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="PicTable">
+    <Key>
+      <PropertyRef Name="ID_IMG" />
+    </Key>
+    <Property Name="ID_IMG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_img" Type="String" Nullable="false" />
+    <Property Name="Path" Type="String" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" />
+    <Property Name="Data_create" Type="DateTime" Nullable="false" />
+    <Property Name="Location" Type="String" Nullable="false" />
+    <NavigationProperty Name="Person" Relationship="DatabaseModel.PicTablePerson" FromRole="PicTable" ToRole="Person" />
+    <NavigationProperty Name="Categories" Relationship="DatabaseModel.PicTableCategories" FromRole="PicTable" ToRole="Categories" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="ID_Person" />
+    </Key>
+    <Property Name="ID_Person" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" Nullable="false" />
+    <NavigationProperty Name="PicTable" Relationship="DatabaseModel.PicTablePerson" FromRole="Person" ToRole="PicTable" />
+  </EntityType>
+  <Association Name="PicTablePerson">
+    <End Type="DatabaseModel.PicTable" Role="PicTable" Multiplicity="*" />
+    <End Type="DatabaseModel.Person" Role="Person" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="ID_Category" />
+    </Key>
+    <Property Name="ID_Category" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" Nullable="false" />
+    <NavigationProperty Name="PicTable" Relationship="DatabaseModel.PicTableCategories" FromRole="Categories" ToRole="PicTable" />
+  </EntityType>
+  <Association Name="PicTableCategories">
+    <End Type="DatabaseModel.PicTable" Role="PicTable" Multiplicity="*" />
+    <End Type="DatabaseModel.Categories" Role="Categories" Multiplicity="*" />
+  </Association>
+</Schema>

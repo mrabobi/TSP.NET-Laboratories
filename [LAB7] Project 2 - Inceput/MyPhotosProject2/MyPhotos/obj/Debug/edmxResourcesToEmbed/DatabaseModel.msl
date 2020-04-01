@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseModelContainer">
+    <EntitySetMapping Name="PicTableSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.PicTable)">
+        <MappingFragment StoreEntitySet="PicTableSet">
+          <ScalarProperty Name="ID_IMG" ColumnName="ID_IMG" />
+          <ScalarProperty Name="Name_img" ColumnName="Name_img" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Data_create" ColumnName="Data_create" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.Person)">
+        <MappingFragment StoreEntitySet="PersonSet">
+          <ScalarProperty Name="ID_Person" ColumnName="ID_Person" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoriesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.Categories)">
+        <MappingFragment StoreEntitySet="CategoriesSet">
+          <ScalarProperty Name="ID_Category" ColumnName="ID_Category" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="PicTablePerson" TypeName="DatabaseModel.PicTablePerson" StoreEntitySet="PicTablePerson">
+      <EndProperty Name="PicTable">
+        <ScalarProperty Name="ID_IMG" ColumnName="PicTable_ID_IMG" />
+      </EndProperty>
+      <EndProperty Name="Person">
+        <ScalarProperty Name="ID_Person" ColumnName="Person_ID_Person" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PicTableCategories" TypeName="DatabaseModel.PicTableCategories" StoreEntitySet="PicTableCategories">
+      <EndProperty Name="PicTable">
+        <ScalarProperty Name="ID_IMG" ColumnName="PicTable_ID_IMG" />
+      </EndProperty>
+      <EndProperty Name="Categories">
+        <ScalarProperty Name="ID_Category" ColumnName="Categories_ID_Category" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

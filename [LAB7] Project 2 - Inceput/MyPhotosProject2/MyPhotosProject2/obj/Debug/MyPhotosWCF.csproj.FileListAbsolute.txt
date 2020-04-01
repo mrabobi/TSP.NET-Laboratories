@@ -1,0 +1,5 @@
+D:\dev\ProiecteTSPNET\MyPhotosProject2\MyPhotosProject2\bin\Debug\MyPhotosProject2.dll
+D:\dev\ProiecteTSPNET\MyPhotosProject2\MyPhotosProject2\bin\Debug\MyPhotosProject2.pdb
+D:\dev\ProiecteTSPNET\MyPhotosProject2\MyPhotosProject2\obj\Debug\MyPhotosWCF.csprojAssemblyReference.cache
+D:\dev\ProiecteTSPNET\MyPhotosProject2\MyPhotosProject2\obj\Debug\MyPhotosProject2.dll
+D:\dev\ProiecteTSPNET\MyPhotosProject2\MyPhotosProject2\obj\Debug\MyPhotosProject2.pdb

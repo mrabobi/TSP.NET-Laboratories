@@ -1,0 +1,17 @@
+D:\dev\TSP.NET\[LAB8] gRPC client and server in ASP.NET Core\GrpcGreeter\GrpcGreeterClient\bin\Debug\netcoreapp3.1\GrpcGreeterClient.exe
+D:\dev\TSP.NET\[LAB8] gRPC client and server in ASP.NET Core\GrpcGreeter\GrpcGreeterClient\obj\Debug\netcoreapp3.1\GrpcGreeterClient.AssemblyInfoInputs.cache
+D:\dev\TSP.NET\[LAB8] gRPC client and server in ASP.NET Core\GrpcGreeter\GrpcGreeterClient\obj\Debug\netcoreapp3.1\GrpcGreeterClient.AssemblyInfo.cs
+D:\dev\TSP.NET\[LAB8] gRPC client and server in ASP.NET Core\GrpcGreeter\GrpcGreeterClient\bin\Debug\netcoreapp3.1\Grpc.Core.Api.dll
+D:\dev\TSP.NET\[LAB8] gRPC client and server in ASP.NET Core\GrpcGreeter\GrpcGreeterClient\bin\Debug\netcoreapp3.1\Grpc.Net.Client.dll
+D:\dev\TSP.NET\[LAB8] gRPC client and server in ASP.NET Core\GrpcGreeter\GrpcGreeterClient\bin\Debug\netcoreapp3.1\Grpc.Net.Common.dll
+D:\dev\TSP.NET\[LAB8] gRPC client and server in ASP.NET Core\GrpcGreeter\GrpcGreeterClient\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\dev\TSP.NET\[LAB8] gRPC client and server in ASP.NET Core\GrpcGreeter\GrpcGreeterClient\obj\Debug\netcoreapp3.1\GrpcGreeterClient.csprojAssemblyReference.cache
+D:\dev\TSP.NET\[LAB8] gRPC client and server in ASP.NET Core\GrpcGreeter\GrpcGreeterClient\obj\Debug\netcoreapp3.1\GrpcGreeterClient.csproj.CopyComplete
+D:\dev\TSP.NET\[LAB8] gRPC client and server in ASP.NET Core\GrpcGreeter\GrpcGreeterClient\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
+D:\dev\TSP.NET\[LAB8] gRPC client and server in ASP.NET Core\GrpcGreeter\GrpcGreeterClient\bin\Debug\netcoreapp3.1\GrpcGreeterClient.deps.json
+D:\dev\TSP.NET\[LAB8] gRPC client and server in ASP.NET Core\GrpcGreeter\GrpcGreeterClient\bin\Debug\netcoreapp3.1\GrpcGreeterClient.runtimeconfig.json
+D:\dev\TSP.NET\[LAB8] gRPC client and server in ASP.NET Core\GrpcGreeter\GrpcGreeterClient\bin\Debug\netcoreapp3.1\GrpcGreeterClient.runtimeconfig.dev.json
+D:\dev\TSP.NET\[LAB8] gRPC client and server in ASP.NET Core\GrpcGreeter\GrpcGreeterClient\bin\Debug\netcoreapp3.1\GrpcGreeterClient.dll
+D:\dev\TSP.NET\[LAB8] gRPC client and server in ASP.NET Core\GrpcGreeter\GrpcGreeterClient\bin\Debug\netcoreapp3.1\GrpcGreeterClient.pdb
+D:\dev\TSP.NET\[LAB8] gRPC client and server in ASP.NET Core\GrpcGreeter\GrpcGreeterClient\obj\Debug\netcoreapp3.1\GrpcGreeterClient.dll
+D:\dev\TSP.NET\[LAB8] gRPC client and server in ASP.NET Core\GrpcGreeter\GrpcGreeterClient\obj\Debug\netcoreapp3.1\GrpcGreeterClient.pdb
